@@ -63,7 +63,7 @@ nav {
 }
 
 nav ul {
-    background: rgb(145, 145, 44);
+    background: rgb(194, 170, 126);
     display: grid;
     grid-template-columns: repeat(5,1fr);
     text-align: center;
@@ -75,10 +75,12 @@ nav ul li {
     margin: 5px;
     padding: 10px;
     list-style: none;
+    border-radius: 10px;
+
 }
 
 section {
-    background: bisque;
+    background:  rgb(194, 170, 126);
     display: grid;
     grid-template-columns: repeat(3,1fr);
     grid-gap: 10px;
@@ -86,15 +88,38 @@ section {
     text-align:center;
     height: 250px;
     margin: 10px 0;
+    font-weight: bold;
 }
 
 section .category {
     border: solid black 1px;   
     display: flex;
-    justify-content: center;
+    flex-direction: column;
+    justify-content: space-around;
     align-items: center; 
     font-size: 2rem;
-    background: rgb(158, 158, 240);
+}
+
+section .category a{
+    font-size: 1.25rem;
+    background-color:wheat;
+    padding: 5px 30px;
+    border:rgb(194, 170, 126) solid 2px;
+    border-radius: 25px;
+    text-decoration: none;
+    color: rgb(136, 104, 46) ;
+}
+
+#botiga {
+    background-image: url('/images/botiga.jpg');
+}
+
+#activitats {
+    background-image: url('/images/activitats.jpg');
+}
+
+#comunitat {
+    background-image: url('/images/comunitat.jpg');
 }
 
 .principal {
@@ -115,14 +140,27 @@ article h2 {
     font-size: 1.5rem;
 }
 
+article img {
+    width: 100%;
+    margin: 20px 0px;
+}
+
+article .more{
+    text-align: right;
+}
+
 aside {
     background: darkgray;
     padding: 10px;
 }
 
 footer {
-    background: gray;
+    background: rgb(168, 142, 93);
     text-align: center;
     padding: 10px;
+    display: flex;
+    justify-content: space-around;
+    font-weight: 100;
+    font-size: 12px;
 }
 
