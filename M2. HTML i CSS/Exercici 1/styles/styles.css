@@ -1,0 +1,118 @@
+body{
+    background: orange;
+    font-family: 'Open Sans', sans-serif;
+    display: flex;
+    justify-content: center;
+}
+
+.container {
+    width: 50vw;
+}
+
+header {
+    background: grey;
+    padding: 10px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+header .home{
+    background:green;
+    width: 100px;
+    text-align: center;
+    padding: 5px;
+}
+
+header a {
+    text-decoration:none;
+    color: white;
+}
+
+header .buttons {
+    display: flex;
+    justify-content: space-around;
+}
+
+header .btn{
+    margin: 2px;
+    border: solid brown 1px;
+    padding: 5px;
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    text-align: center;
+    background:cornsilk;
+    font-weight: bold;
+}
+
+nav {
+    background: rgb(211, 210, 210);
+    padding: 0px;
+    margin: 10px 0;
+}
+
+nav ul {
+    background: rgb(145, 145, 44);
+    display: grid;
+    grid-template-columns: repeat(5,1fr);
+    text-align: center;
+    padding: 5px;
+}
+
+nav ul li {
+    background: beige;
+    margin: 5px;
+    padding: 10px;
+    list-style: none;
+}
+
+section {
+    background: bisque;
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    grid-gap: 10px;
+    padding: 10px;
+    text-align:center;
+    height: 250px;
+    margin: 10px 0;
+}
+
+section .category {
+    border: solid black 1px;   
+    display: flex;
+    justify-content: center;
+    align-items: center; 
+    font-size: 2rem;
+    background: rgb(158, 158, 240);
+}
+
+.principal {
+    display: grid;
+    grid-template-columns: 1fr 3fr 1fr;
+    padding: 10px 0;
+    margin: 10px 0;
+}
+
+article {
+    background: lightgray;
+    padding: 10px 50px;
+}
+
+article h2 {
+    color:rgb(27, 60, 131);
+    text-align: center;
+    font-size: 1.5rem;
+}
+
+aside {
+    background: darkgray;
+    padding: 10px;
+}
+
+footer {
+    background: gray;
+    text-align: center;
+    padding: 10px;
+}
+
