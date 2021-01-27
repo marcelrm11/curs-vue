@@ -1,0 +1,218 @@
+header {
+    background: black;
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: auto;
+    margin: 20px 0px;
+    padding: 20px;
+}
+
+.subheader1 {
+    background: darkgray;
+    display: flex;
+    justify-content: space-between;
+    width: auto;
+    height: auto;
+    margin: 0 0 5px 0;
+    padding: 10px;
+}
+
+.sh1-1 {
+    background: red;
+    width: auto;
+    height: auto;
+    padding: 5px;
+    flex: auto;
+}
+
+.sh1-2 {
+    background: red;
+    width: auto;
+    height: auto;
+    padding: 5px;
+    flex: 5;
+    margin: 0px 10px;
+}
+
+.sh1-3 {
+    background: red;
+    width: auto;
+    height: auto;
+    padding: 5px;
+    flex: auto;
+}
+
+.subheader2 {
+    background: orange;
+    display: flex;
+    justify-content: space-between;
+    width: auto;
+    height: auto;
+    margin: 5px 0 0 0;
+    padding: 10px;
+}
+
+.sh2-1 {
+    background: yellow;
+    width: auto;
+    height: auto;
+    padding: 5px;
+    flex: auto;
+}
+
+article {
+    background: black;
+    display: flex;
+    justify-content: space-between;
+    width: auto;
+    height: auto;
+    margin: 20px 0px;
+    padding: 15px;
+}
+
+.subart1 {
+    background: lightgray;
+    display: flex;
+    justify-content: space-between;
+    align-content: space-between;
+    width: auto;
+    height: auto;
+    margin: 5px;
+    padding: 10px;
+    flex: 4;
+    flex-wrap: wrap;
+}
+
+.sa1-1 {
+    background: blue;
+    width: calc(50% - 15px);
+    padding: 5px;
+    margin-right: 5px;
+    margin-bottom: 10px;
+}
+.sa1-2 {
+    background: blue;
+    width: calc(50% - 15px);
+    padding: 5px;
+    margin-left: 5px;
+    margin-bottom: 10px;
+}
+.sa1-3 {
+    background: blue;
+    width: calc(50% - 15px);
+    padding: 5px;
+    margin-right: 5px;
+    margin-bottom: 10px;
+}
+.sa1-4 {
+    background: blue;
+    width: calc(50% - 15px);
+    padding: 5px;
+    margin-left: 5px;
+    margin-bottom: 10px;
+}
+
+.sa1-esp {
+    background: purple;
+    width: calc(100%);
+    padding: 5px;
+}
+
+.subart2 {
+    background: red;
+    display: flex;
+    flex-direction: column;
+    width: auto;
+    height: auto;
+    margin: 5px;
+    padding: 10px;
+    flex: 2;
+}
+
+.sa2-1 {
+    background: yellow;
+    width: auto;
+    padding: 5px;
+    margin-bottom: 5px;
+}
+
+.sa2-2 {
+    background: yellow;
+    width: auto;
+    padding: 5px;
+}
+
+footer {
+    background: black;
+    display: flex;
+    width: auto;
+    height: auto;
+    margin: 20px 0px;
+    padding: 20px;
+}
+
+.subfooter {
+    background: yellow;
+    padding: 10px;
+    width: 100%;
+}
+
+@media screen and (max-width: 768px) {
+    article {
+        background: yellowgreen;
+        flex-direction: column;
+    }
+}
+
+@media screen and (max-width: 384px) {
+    header, footer {
+        padding: 30px;
+    }
+    article {
+        padding: 25px;
+    }
+    .subheader1, .subheader2 {
+        padding: 30px;
+        flex-wrap: wrap;
+    }
+    .sh1-1, .sh1-2, .sh1-3 {
+        padding: 15px;
+    }
+    .sh1-2 {
+        margin: 0 30px;
+    }
+    .sh2-1 {
+        padding: 15px;
+    }
+    .subart1, .subart2 {
+        padding: 30px;
+    }
+    .sa1-1, .sa1-3, {
+        padding: 15px;
+        width: 30%;
+        margin-bottom: 10px;
+    }
+    .sa1-2, .sa1-4 {
+        padding: 15px;
+        width: 30%;
+        margin-bottom: 10px;
+    }
+    .sa1-esp {
+        padding: 15px;
+        /*margin-top: 20px;*/
+    }
+    /*no consigo que sa1-1,2,3,4 y esp esten
+    separados verticalmente*/
+    .sa2-1 {
+        padding: 15px;
+        margin-bottom: 8px;
+    }
+    .sa2-2 {
+        padding: 15px;
+        margin-top: 7px;
+    }
+    .subfooter {
+        padding: 15px;
+    }
+}
