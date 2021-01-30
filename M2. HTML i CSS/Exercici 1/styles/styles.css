@@ -59,6 +59,12 @@ nav ul {
     text-align: center;
     padding: 5px;
 }
+@media screen and (max-width: 768px) {
+    nav ul {
+        display: flex;
+        flex-wrap: wrap;
+    }
+}
 
 nav ul li {
     background: beige;
@@ -92,6 +98,16 @@ section .category {
     grid-template-columns: 1fr 3fr 1fr;
     padding: 10px 0;
     margin: 10px 0;
+}
+@media screen and (max-width: 768px) {
+    .principal {
+        display: flex;
+        flex-wrap: wrap;
+    }
+    aside {
+        flex-grow: 1;
+        text-align: center;
+    }
 }
 
 article {
