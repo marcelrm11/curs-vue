@@ -79,7 +79,7 @@ header {
 }
 
 .subheader2 {
-    background-image: url('/images/Activitat\ Flex\ -\ Nivell\ 2\ -\ fons\ capçalera\ CUT.jpg');
+    background-image: url('../images/Activitat\ Flex\ -\ Nivell\ 2\ -\ fons\ capçalera\ CUT.jpg');
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -175,6 +175,7 @@ article {
     padding: 3%;
     font-size: 0.85em;
     background: beige;
+    flex-grow: 1;
 }
 
 .sa1-esp {
@@ -264,7 +265,7 @@ footer {
     .subart1, .subart2 {
         padding: 30px;
     }
-    .sa1-1, .sa1-3, {
+    .sa1-1, .sa1-3 {
         padding: 15px;
         width: 30%;
         margin-bottom: 10px;
