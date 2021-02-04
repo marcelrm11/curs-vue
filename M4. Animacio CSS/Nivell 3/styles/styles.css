@@ -1,0 +1,42 @@
+body {
+    margin: 0;
+    font-family: Lato, 'sans-serif';
+    font-size: 2em;
+    height: 100vh;
+    display: flex;
+    justify-content: space-between;
+}
+
+.back {
+    width: 19.5%;
+    color: white;
+    overflow: hidden;
+    padding: 0;
+}
+.back:nth-child(1) {background: #244F75;}
+.back:nth-child(2) {background: #60BFBF;}
+.back:nth-child(3) {background: #8C4B7E;}
+.back:nth-child(4) {background: #F8BB44;}
+.back:nth-child(5) {background: #F24B4B;}
+
+.cover {
+    width: 100%;
+    height: 100%;
+    background-color: white;
+    opacity: 0.1;
+    transform: skew(25deg);
+    transition-duration: 0.3s;
+    transition-timing-function: ease-out;
+}
+.back:hover .cover {
+    width: 500%; height: 200%;
+    transition-duration: 0.3s;
+}
+
+.text {
+    position: relative;
+    top: 50%; left: 0;
+    text-align: center;
+    height: 0;
+}
+
