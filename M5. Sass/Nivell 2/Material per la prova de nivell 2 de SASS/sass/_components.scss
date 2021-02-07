@@ -1,0 +1,57 @@
+//----------VARIABLES----------
+//colors
+$dark-blue: #244F75;
+$light-blue: #60BFBF;
+$purple: #8C4B7E;
+$yellow: #F8BB44;
+$red: #F24B4B;
+//font
+$myFont: "Lato";
+$fontColor: white;
+$fontSize: 3.5vw;
+$fontWeight: 300;
+
+//-----------MIXINS------------
+//strips
+@mixin strips-base ($width) {
+    height: 100vh;
+    text-align: center;
+    display: flex;
+    width: $width;
+}
+@mixin strip-flex ($position){
+    justify-content: center;
+    align-items: center;
+    position: $position;
+}
+@mixin trans-opac($skew, $scaleY, $translateX, $translateY, $opacity) {
+    transform: skew($skew) scaleY($scaleY) translate($translateX, $translateY);
+    opacity: $opacity;
+}
+//content animation
+@mixin animation($bg-color, $ani-last2letters, $duration) {
+    background-color: $bg-color;
+    animation: {
+        name: str-insert($string: "strip--u4rx9", $insert: $ani-last2letters, $index: 13);
+        duration: $duration;
+        timing-function: ease-out;
+    }
+}
+  //keyframes with vendor prefixes
+@mixin keyframes($ani-last2letters, $translateX, $translateY, $translateZ) {
+    @-webkit-keyframes strip--u4rx9#{$ani-last2letters} {
+        from {
+        transform: translate3d($translateX, $translateY, $translateZ);
+        }
+    }
+    @-moz-keyframes strip--u4rx9#{$ani-last2letters} {
+        from {
+        transform: translate3d($translateX, $translateY, $translateZ);
+        }
+    }
+    @keyframes strip--u4rx9#{$ani-last2letters} {
+        from {
+        transform: translate3d($translateX, $translateY, $translateZ);
+        }
+    }  
+}
