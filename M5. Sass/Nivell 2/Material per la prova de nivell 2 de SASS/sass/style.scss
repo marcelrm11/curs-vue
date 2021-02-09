@@ -1,4 +1,5 @@
-@import "components";
+@import "mixins";
+@import "variables";
 @import url("https://fonts.googleapis.com/css?family=Lato:300&display=swap");
 
 /* general */
@@ -33,14 +34,15 @@ h1 {
 
     .strip_content {
       @include strips-base(100%);
-      @include strips-base(absolute);
+      @include strip-flex(absolute);
     }
   }
+  
   /* before */
   .strip_content {
     &:before {
-      @include strip-flex(20vw);
-      @include strips-base(absolute);
+      @include strips-base(20vw);
+      @include strip-flex(absolute);
       @include trans-opac(30deg, 1, 0, 0, 0.05);
       content: "";
       text-align: initial;
@@ -59,25 +61,11 @@ h1 {
 
 /* strips 1-5: nth-child 1-5 */
 .strip {
-  &:nth-child(1) .strip_content {
-    @include animation($dark-blue, pe, 0.5s);}
-  @include keyframes(pe, -100%, 0, 0);
-
-  &:nth-child(2) .strip_content {
-    @include animation($light-blue, pg, 0.8s);}
-  @include keyframes(pg, 0, 100%, 0);
-
-  &:nth-child(3) .strip_content {
-    @include animation($purple, q8, 0.7s);}
-  @include keyframes(q8, 0, -100%, 0);
-
-  &:nth-child(4) .strip_content {
-    @include animation($yellow, qn, 1s);}
-  @include keyframes(qn, 0, 100%, 0);
-
-  &:nth-child(5) .strip_content {
-    @include animation($red, r0, 1.1s)}
-  @include keyframes(r0, 100%, 0, 0);
+  @for $i from 1 to 6 {
+    &:nth-child(#{$i}) .strip_content {
+      @include animation(nth($colors, $i), nth($ani-last2letters, $i), nth($duration, $i));}
+    @include keyframes(nth($ani-last2letters, $i), nth($translateX, $i), nth($translateY, $i), nth($translateZ, $i));
+  }
 }
 
 // /*# sourceMappingURL=style.css.map */

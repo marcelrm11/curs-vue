@@ -1,0 +1,18 @@
+//colors
+$dark-blue: #244F75;
+$light-blue: #60BFBF;
+$purple: #8C4B7E;
+$yellow: #F8BB44;
+$red: #F24B4B;
+//font
+$myFont: "Lato";
+$fontColor: white;
+$fontSize: 3.5vw;
+$fontWeight: 300;
+//arrays
+$colors: ($dark-blue, $light-blue, $purple, $yellow, $red);
+$ani-last2letters: ("pe", "pg", "q8", "qn", "r0");
+$duration: (0.5s, 0.8s, 0.7s, 1s, 1.1s);
+$translateX: (-100%, 0, 0, 0, 100%);
+$translateY: (0, 100%, -100%, 100%, 0);
+$translateZ: (0, 0, 0, 0, 0);

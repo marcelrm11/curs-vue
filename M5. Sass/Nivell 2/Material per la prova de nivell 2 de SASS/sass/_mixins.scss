@@ -1,17 +1,3 @@
-//----------VARIABLES----------
-//colors
-$dark-blue: #244F75;
-$light-blue: #60BFBF;
-$purple: #8C4B7E;
-$yellow: #F8BB44;
-$red: #F24B4B;
-//font
-$myFont: "Lato";
-$fontColor: white;
-$fontSize: 3.5vw;
-$fontWeight: 300;
-
-//-----------MIXINS------------
 //strips
 @mixin strips-base ($width) {
     height: 100vh;
@@ -32,7 +18,7 @@ $fontWeight: 300;
 @mixin animation($bg-color, $ani-last2letters, $duration) {
     background-color: $bg-color;
     animation: {
-        name: str-insert($string: "strip--u4rx9", $insert: $ani-last2letters, $index: 13);
+        name: strip--u4rx9#{$ani-last2letters};
         duration: $duration;
         timing-function: ease-out;
     }
