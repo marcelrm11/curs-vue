@@ -10,7 +10,7 @@ body{
 }
 
 header {
-    background-image: url('/images/cover mine.jpg');
+    background-image: url('../images/cover mine.jpg');
     padding: 10px;
     display: flex;
     justify-content: space-between;
@@ -134,15 +134,15 @@ section .category a{
 }
 
 #botiga {
-    background-image: url('/images/botiga.jpg');
+    background-image: url('../images/botiga.jpg');
 }
 
 #activitats {
-    background-image: url('/images/activitats.jpg');
+    background-image: url('../images/activitats.jpg');
 }
 
 #comunitat {
-    background-image: url('/images/comunitat.jpg');
+    background-image: url('../images/comunitat.jpg');
 }
 
 .principal {
