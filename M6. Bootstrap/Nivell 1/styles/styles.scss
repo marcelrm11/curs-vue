@@ -1,0 +1,56 @@
+@import "variables";
+
+body {
+    font-family: $myFont;
+}
+
+#hero {
+    background: {
+        image: url('../images/cover\ mine.jpg');
+        size: cover;
+        position: center;
+    };
+    padding: 1.3% 10px;
+    min-height: 100px;
+    max-height: 200px;
+    position: relative;
+    font-size: 4vw;
+
+    .logo-brand {
+        width: 13.5%;
+        min-height: 80px;
+        min-width: 80px;
+    }
+
+    i {padding: 0 0.3vw;}
+}
+
+@media screen and (min-width: 992px) {
+    #hero {
+        i {font-size: 36px; }
+    }
+}
+
+.navbar {
+    .nav-pills {
+            display: block;
+            float: none;
+            margin: 0 auto;
+            text-align: center;
+
+            li {
+                display: inline-block;
+                float: none;
+                margin: 5px 5px;
+            }
+        }
+
+    i {
+        font-size: 30px;}
+}
+
+.carousel-inner img {
+    width: auto;
+    max-height: 65vh;
+    object-fit: cover;
+  }
