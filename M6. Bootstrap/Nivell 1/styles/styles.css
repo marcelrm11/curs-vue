@@ -13,6 +13,7 @@ body {
   #hero .logo-brand {
     width: 13.5%;
     min-height: 80px;
+    max-height: 160px;
     min-width: 80px; }
   #hero i {
     padding: 0 0.3vw; }
@@ -34,8 +35,9 @@ body {
 
 .carousel-inner img {
   width: auto;
-  max-height: 65vh;
+  height: 65vh;
   -o-object-fit: cover;
-     object-fit: cover; }
+     object-fit: cover;   
+}
 
 /*# sourceMappingURL=styles.css.map */
