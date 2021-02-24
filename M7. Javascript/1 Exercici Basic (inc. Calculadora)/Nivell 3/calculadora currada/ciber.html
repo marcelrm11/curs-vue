@@ -9,37 +9,42 @@
     <link rel="stylesheet" href="style.css" type="text/css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Space+Mono&display=swap" rel="stylesheet">
+    <script src="https://kit.fontawesome.com/22d5895588.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <div class="calculadora">
 
-        <div id="display"></div>
+        <input id="display" name="display" type="text">
         
-        <div class="boton" id="ac" style="background:coral;">AC</div>
-        <div class="boton" id="signo" style="background:coral;">+/-</div>
-        <div class="boton" id="porcien" style="background:coral;">%</div>
-        <div class="boton" id="dividir" style="background: blueviolet;">/</div>
+        <div class="boton sig" id="ac" onclick="reset()"><strong>AC</strong></div>
+        <div class="boton sig" id="signo" onclick="signo()"><img src="img/plusminus2.png" width="40px"></div>
+        <div class="boton sig" id="porcien" onclick="percent()"><i class="fas fa-percentage"></i></div>
+        <button class="boton op" id="dividir" onclick="division()"><i class="fas fa-divide"></i></button>
 
-        <div class="boton" id="siete">7</div>
-        <div class="boton" id="ocho">8</div>
-        <div class="boton" id="nueve">9</div>
-        <div class="boton" id="multiplicar" style="background: blueviolet;">x</div>
+        <div class="boton num" id="siete" onclick="display_numero(7)">7</div>
+        <div class="boton num" id="ocho" onclick="display_numero(8)">8</div>
+        <div class="boton num" id="nueve" onclick="display_numero(9)">9</div>
+        <button class="boton op" id="multiplicar" onclick="multiplicacion()"><i class="fas fa-times"></i></button>
 
-        <div class="boton" id="cuatro">4</div>
-        <div class="boton" id="cinco">5</div>
-        <div class="boton" id="seis">6</div>
-        <div class="boton" id="restar" style="background: blueviolet;">-</div>
+        <div class="boton num" id="cuatro" onclick="display_numero(4)">4</div>
+        <div class="boton num" id="cinco" onclick="display_numero(5)">5</div>
+        <div class="boton num" id="seis" onclick="display_numero(6)">6</div>
+        <button class="boton op" id="restar" onclick="resta()"><i class="fas fa-minus"></i></button>
 
-        <div class="boton" id="uno">1</div>
-        <div class="boton" id="dos">2</div>
-        <div class="boton" id="tres">3</div>
-        <div class="boton" id="sumar" style="background: blueviolet;">+</div>
+        <div class="boton num" id="uno" onclick="display_numero(1)">1</div>
+        <div class="boton num" id="dos" onclick="display_numero(2)">2</div>
+        <div class="boton num" id="tres" onclick="display_numero(3)">3</div>
+        <button class="boton op" id="sumar" onclick="suma()"><i class="fas fa-plus"></i></button>
 
-        <div class="boton" id="zero" >0</div>
-        <div class="boton" id="coma">,</div>
-        <div class="boton" id="igual" style="background: blueviolet;">=</div>
+        <div class="boton num" id="zero" onclick="display_numero(0)">0</div>
+        <div class="boton num" id="coma" onclick="coma()">,</div>
+        <div class="boton op" id="igual" onclick="igual()"><i class="fas fa-equals"></i></div>
 
     </div>
+
+    <script>
+        document.getElementById("display").value=0;
+    </script>
     
 </body>
 </html>

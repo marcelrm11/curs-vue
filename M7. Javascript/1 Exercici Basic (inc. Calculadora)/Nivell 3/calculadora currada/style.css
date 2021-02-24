@@ -16,33 +16,72 @@ body {
     grid-template-rows: repeat(5, 1fr);
     width: 384px;
     background:darkgreen;
+    box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
     border: solid 5px rgb(0, 73, 0);
     padding: 10px;
 }
 
-
-
-
-
 /* Boton 1 */
-.boton {
-width: 80px;
-height: 80px;
-margin: 8px;
-color: white;
-display: flex;
-justify-content: center;
-align-items: center;
 
-background: linear-gradient(180deg, #96D188 0%, #5BA14A 100%), #589F46;
-box-shadow: 6px 8px 5px rgba(0, 0, 0, 0.25), 3px 3px 0px rgba(63, 131, 47, 0.75), inset 0px 2px 1px rgba(245, 255, 244, 0.75);
-border-radius: 50%;
+button {
+    font-size: 32px;
+    font-family: 'Space Mono', monospace;
+    border: none;
+}
+button:focus {
+    outline: none;
+    transition: 0.7s;
+    background: #d0eef3;
+    color: #3da0be;
+}
+
+.boton {
+    width: 80px;
+    height: 80px;
+    margin: 8px;
+    color: white;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+}
+.boton:hover {cursor: pointer;}
+
+.num{
+    background: linear-gradient(180deg, #96D188 0%, #5BA14A 100%), #589F46;
+    box-shadow: 6px 8px 5px rgba(0, 0, 0, 0.25), 3px 3px 0px rgba(63, 131, 47, 0.75), inset 0px 2px 1px rgba(245, 255, 244, 0.75);
+}
+.num:active{
+    background: linear-gradient(180deg, #80bb71 0%, #468537 100%), #408030;
+}
+.sig{
+    background: linear-gradient(180deg, #d1a588 0%, #a1714a 100%), #9f6e46;
+    box-shadow: 6px 8px 5px rgba(0, 0, 0, 0.25), 3px 3px 0px rgba(131, 81, 47, 0.75), inset 0px 2px 1px rgba(255, 249, 244, 0.75);
+}
+.sig:active{
+    background: linear-gradient(180deg, #af8365 0%, #7c5332 100%), #805532;
+}
+.op{
+    background: linear-gradient(180deg, #88c6d1 0%, #4a8da1 100%), #468a9f;
+    box-shadow: 6px 8px 5px rgba(0, 0, 0, 0.25), 3px 3px 0px rgba(47, 107, 131, 0.75), inset 0px 2px 1px rgba(244, 253, 255, 0.75);
+}
+.op:active{
+    background: linear-gradient(180deg, #63a2ad 0%, #336f81 100%), #2f6d80;
 }
 
 #display {
     grid-column: span 4;
     border: rgba(63, 131, 47) 2px solid;
     background: #96D188;
+    place-self: center;
+    height: 60px;
+    width: 348px;
+    font-family: 'Space Mono', monospace;
+    font-size: 32px;
+    padding: 10px;
+    text-align: end;
+    color: darkblue;
 }
 
 #zero {
