@@ -15,23 +15,27 @@
 
         <div class="my-3">
             <label for="nom" class="font-weight-bold">El teu nom</label>
-            <input id="nom" class="form-control text-center" type="text" name="nom">
+            <input id="nom" class="form-control text-center ml-auto mr-auto w-50" type="text" name="nom" value="marcel">
         </div>
         
         <div class="my-3">
             <label for="cognom" class="font-weight-bold">El teu cognom</label>
-            <input id="cognom" class="form-control text-center" type="text" name="cognom">
+            <input id="cognom" class="form-control text-center ml-auto mr-auto w-50" type="text" name="cognom" value="roig8">
         </div>
         
-
     </div>
 
     <div class="container-fluid text-center">
-        <button class="btn btn-primary m-1" type="button">Lletres del nom</button>
-        <button class="btn btn-secondary m-1" type="button">Tipus de Lletres</button>
-        <button class="btn btn-info m-1" type="button">Freqüència de les Lletres</button>
-        <button class="btn btn-success m-1" type="button">Nom i Cognom</button>
-        <button class="btn btn-warning m-1" type="button">Emails</button>
+        <button class="btn btn-primary m-1" type="button" onclick="lletres()">Lletres del nom</button>
+        <button class="btn btn-secondary m-1" type="button" onclick="tipusLletres()">Tipus de Lletres</button>
+        <button class="btn btn-info m-1" type="button" onclick="freqLletres()">Freqüència de les Lletres</button>
+        <button class="btn btn-success m-1" type="button" onclick="fullName()">Nom i Cognom</button>
+        <button class="btn btn-warning m-1" type="button" onclick="emails()">Emails</button>
+    </div>
+
+    <div class="container mt-3 p-4 bg-light border rounded border-secondary" style="min-height: 50vh;">
+        <h5 id="titol" class="mb-3"></h5>
+        <h4 id="cos"></h4>
     </div>
 
 
