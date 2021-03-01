@@ -1,0 +1,23 @@
+window.addEventListener('keydown', ShowKey, false);
+
+function ShowKey(e)
+{
+  var key = e.key;
+}
+
+const buttons = document.querySelectorAll(".boton");
+
+for (const button of buttons) 
+{
+  button.addEventListener('click', GetKey, false);
+}
+
+function GetKey(e)
+{
+  //e.preventDefault();
+  console.log(e.target.textContent);
+  if(Number(e.target.textContent) >= 0 && Number(e.target.textContent) <= 9)
+  {
+    console.log(e.target.textContent);
+  }
+}

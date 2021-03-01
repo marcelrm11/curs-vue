@@ -19,7 +19,8 @@ var resultado=false;
 var comma=false;
 
 function display_numero(numero) {
-    document.getElementById("display").value=cifra+numero;
+    // document.getElementById("display").value=cifra+numero;
+    display.value=cifra+numero;
     cifra = document.getElementById("display").value;
 }
 
@@ -36,6 +37,37 @@ function coma() {
         }
     }
     comma=true;
+}
+
+function operacionPrevia(operacion) {
+    if(sumar){
+        acumulado += parseFloat(cifra);
+        document.getElementById("display").value=acumulado;
+    }
+    else if(restar){
+        acumulado -= parseFloat(cifra);
+        document.getElementById("display").value=acumulado;
+    }
+    else if (multiplicar){
+        acumulado *= parseFloat(cifra);
+        document.getElementById("display").value=acumulado;
+    }
+    else if (dividir) {
+        acumulado /= parseFloat(cifra);
+        document.getElementById("display").value=acumulado;
+    }
+    else if(resultado) {
+        acumulado=parseFloat(document.getElementById("display").value);
+    }
+    cifra = ""; 
+    sumar=false;
+    restar=false;
+    multiplicar=false;
+    dividir=false;
+    primera_op=false;
+    resultado=false;
+    comma=false;
+    operacion=true;
 }
 
 function reset() {
@@ -85,63 +117,14 @@ function igual() {
 }
 
 function suma() {
-    if(restar){
-        acumulado -= parseFloat(cifra);
-        document.getElementById("display").value=acumulado;
-    }
-    else if (multiplicar){
-        acumulado *= parseFloat(cifra);
-        document.getElementById("display").value=acumulado;
-    }
-    else if (dividir) {
-        acumulado /= parseFloat(cifra);
-        document.getElementById("display").value=acumulado;
-    }
-    else if(resultado) {
-        acumulado=parseFloat(document.getElementById("display").value);
-    }
-    else {
-        acumulado += parseFloat(cifra);
-        document.getElementById("display").value=acumulado;
-    }
-    cifra = "";
-    sumar=true;  
-    restar=false;
-    multiplicar=false;
-    dividir=false;
-    primera_op=false;
-    resultado=false;
-    comma=false;
+    sumar=true;
+    operacionPrevia(sumar);
 }
 
 function resta() {
     if (primera_op==false) {
-        if(sumar){
-            acumulado += parseFloat(cifra);
-            document.getElementById("display").value=acumulado;
-        }
-        else if (multiplicar){
-            acumulado *= parseFloat(cifra);
-            document.getElementById("display").value=acumulado;
-        }
-        else if (dividir) {
-            acumulado /= parseFloat(cifra);
-            document.getElementById("display").value=acumulado;
-        }
-        else if(resultado) {
-            acumulado=parseFloat(document.getElementById("display").value);
-        }
-        else{
-            acumulado -= parseFloat(cifra);
-            document.getElementById("display").value=acumulado;   
-        }
-        cifra = "";
-        restar = true;
-        sumar = false;
-        multiplicar = false;
-        dividir=false;
-        resultado=false;
-        comma=false;
+        restar=true;
+        operacionPrevia(restar);
     }
     else {
         acumulado=parseFloat(cifra);
@@ -155,32 +138,8 @@ function resta() {
 
 function multiplicacion() {
     if (primera_op==false){
-        if(restar){
-            acumulado -= parseFloat(cifra);
-            document.getElementById("display").value=acumulado;
-        }
-        else if(sumar){
-            acumulado += parseFloat(cifra);
-            document.getElementById("display").value=acumulado;
-        }
-        else if (dividir) {
-            acumulado /= parseFloat(cifra);
-            document.getElementById("display").value=acumulado;
-        }
-        else if(resultado) {
-            acumulado=parseFloat(document.getElementById("display").value);
-        }
-        else {
-            acumulado *= parseFloat(cifra);
-            document.getElementById("display").value=acumulado;
-        }
-        cifra = "";
-        restar = false;
-        sumar = false;
-        multiplicar = true;
-        dividir=false;
-        resultado=false;
-        comma=false;
+        multiplicar=true;
+        operacionPrevia(multiplicar);
     }
     else {
         acumulado=parseFloat(cifra);
@@ -194,32 +153,8 @@ function multiplicacion() {
 
 function division() {
     if (primera_op==false) {
-        if(restar){
-            acumulado -= parseFloat(cifra);
-            document.getElementById("display").value=acumulado;
-        }
-        else if (multiplicar){
-            acumulado *= parseFloat(cifra);
-            document.getElementById("display").value=acumulado;
-        }
-        else if(sumar){
-            acumulado += parseFloat(cifra);
-            document.getElementById("display").value=acumulado;
-        }
-        else if(resultado) {
-            acumulado=parseFloat(document.getElementById("display").value);
-        }
-        else {
-            acumulado /= parseFloat(cifra);
-            document.getElementById("display").value=acumulado;
-        }
-        cifra = "";
-        sumar=false;  
-        restar=false;
-        multiplicar=false;
         dividir=true;
-        resultado=false;
-        comma=false;
+        operacionPrevia(dividir);
     }
     else {
         acumulado=parseFloat(cifra);
