@@ -1,7 +1,8 @@
 var nom = ["m","a","r","c","e","l"," ","r","o","i","g",8];
-var obj = {};
+var obj = new Map();
 
 console.log("partim del nom "+'"'+nom.join('')+'"');
+
 
 for (let i = 0; i < nom.length; i++) {
     const lletra = nom[i];
