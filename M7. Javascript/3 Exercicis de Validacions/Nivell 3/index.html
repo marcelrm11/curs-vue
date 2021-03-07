@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>M7 Valid Lvl3</title>
+    <link rel="stylesheet" href="bootstrap/css/bootstrap.css">
+    <script src="scripts/script.js"></script>
+</head>
+<body>
+    
+    <h1 class="text-center my-3">VALIDATIONS</h1>
+
+    <div class="container my-4 w-75 border">
+        <form class="form-group my-4 mx-4" method="GET" name="searchForm" onsubmit="return saveSearch(search),validateSearch()">
+            <fieldset>
+                <legend>Search Form</legend>
+
+                <input id="search" class="form-control w-75 d-inline" type="search" name="search" placeholder="type your search here" autocomplete="off" oninput="limpiar(search)">
+
+                <input type="submit" value="Check" class="btn btn-dark mb-1">
+            </fieldset>
+        </form>
+    </div>
+
+    <div class="container my-4 border w-75">
+        <form class="form-group my-4 mx-4" method="GET" name="loginForm" onsubmit="return saveLogin(email,password),validateLogin(),securePassword(password)">
+            <fieldset>
+                <legend>Login Form</legend>
+
+                <label for="email">Email</label><br>
+                <input id="email" class="form-control w-75" type="text" name="email" placeholder="type your email here" autocomplete="off" onblur="validateEmail(email)" oninput="limpiar(email)">
+
+                <label for="password" class="mt-2">Password</label>
+                <br>
+                <input id="password" class="form-control w-75" type="password" name="password" placeholder="type your password here" autocomplete="off" oninput="limpiar(password)">
+                <a href="https://www.google.com/search?q=contrase%C3%B1as+olvidadas&pws=0&gl=us&gws_rd=cr" target="_blank" class="font-weight-light">¿Olvidaste tu contraseña?</a><br>
+
+                <input type="submit" value="Check" class="btn btn-dark mt-3">
+            </fieldset>   
+        </form>
+    </div>
+
+    <div class="container my-4 border w-75">
+        <form class="form-group my-4 mx-4" method="GET" name="signinForm" onsubmit="return saveSignin(email2,password2,provincia),comparePasswords(password3,password2), validateEmail(email2)">
+            <fieldset>
+                <legend>Sign in Form</legend>
+
+                <label for="email2">Email</label><br>
+                <input id="email2" class="form-control w-75" type="text" name="email2" placeholder="type your email here" autocomplete="off" oninput="limpiar(email2)" onblur="validateEmail(email2)">
+
+                <label for="password2" class="mt-2">Password</label>
+                <br>
+                <input id="password2" class="form-control w-75" type="password" name="password2" placeholder="create your password here" autocomplete="off" oninput="limpiar(password2)" onblur="securePassword(password2)">
+
+                <label for="password3" class="mt-2">Repeat password</label>
+                <br>
+                <input id="password3" class="form-control w-75" type="password" name="password3" placeholder="repeat your password here" autocomplete="off" oninput="limpiar(password3)">
+
+                <label for="provincia" class="mt-2">Select your province</label>
+                <br>
+                <select id="provincia" class="form-control w-75" name="provincia" autocomplete="off" onblur="checkProvince(provincia)" oninput="limpiar(provincia)">
+                    <option value="none" selected disabled hidden>choose your province</option>
+                    <option value="Barcelona">Barcelona</option>
+                    <option value="Girona">Girona</option>
+                    <option value="Lleida">Lleida</option>
+                    <option value="Tarragona">Tarragona</option>
+                </select>
+
+                <input type="submit" value="Sign in" class="btn btn-warning mt-3">
+            </fieldset>
+            
+        </form>
+    </div>
+
+    <!-- Button trigger modal -->
+    <div class="container text-center my-4">
+        <button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#exampleModalCenter" onclick="showValidations()">
+            See validations
+        </button>
+    </div>
+    
+    
+    <!-- Modal -->
+    <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered" role="document">
+        <div class="modal-content">
+            <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLongTitle">Validated fields</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+            </button>
+            </div>
+            <div class="modal-body">
+            <p class="d-inline font-weight-bold">Búsqueda:</p>
+            <p id="field0" class="d-inline">hola</p><br><br>
+            <p class="d-inline font-weight-bold">Login email:</p>    
+            <p id="field1" class="d-inline"></p><br><br>
+            <p class="d-inline font-weight-bold">Login password:</p>    
+            <p id="field2" class="d-inline"></p><br><br>
+            <p class="d-inline font-weight-bold">Sign in email:</p>    
+            <p id="field3" class="d-inline"></p><br><br>
+            <p class="d-inline font-weight-bold">Sign in password:</p>    
+            <p id="field4" class="d-inline"></p><br><br>
+            <p class="d-inline font-weight-bold">Province:</p>    
+            <p id="field5" class="d-inline"></p><br><br>
+            </div>
+            <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+            <button type="button" class="btn btn-primary" data-dismiss="modal">Good job!</button>
+            </div>
+        </div>
+        </div>
+    </div>
+        
+
+
+
+
+    <script src="bootstrap/js/jquery-3.5.1.slim.min.js"></script>
+    <script src="bootstrap/js/popper.min.js"></script>
+    <script src="bootstrap/js/bootstrap.min.js"></script>
+</body>
+</html>
