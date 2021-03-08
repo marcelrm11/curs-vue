@@ -49,20 +49,18 @@ function validateSearch() {
     return false;
 }
 
-function validateLogin() {
+function validateLogin(inp1) {
     var x = document.forms["loginForm"]["email"].value;
     // var y = /[A-Za-z0-9]+@[A-Za-z0-9]+\.[A-Za-z]{2,}/;
     var y = /^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+\.[a-zA-Z0-9-]{2,}/;
     if (y.test(x)){
         var z = document.forms["loginForm"]["password"].value;
         var msg1 = "No lo puedes dejar vacío!";
+        valid(inp1);
         if(z==""){
             invalid(password,msg1);
             // return false;
         }
-        // else {
-        //     return (true);
-        // }
     } 
     else if (y.test(x)==false) {
         var msg2 = "Introduce una dirección válida, ¡tú puedes!";
@@ -100,8 +98,8 @@ function comparePasswords(inp1,inp2) {
         invalid(inp2, msg2);
         // return false;
     }
-    else {valid(email2); valid(password2); valid(password3); valid(province);}
-    return false;
+    else {valid(email2); valid(password2); valid(password3); valid(provincia);
+        return false;}
 }
 
 function checkProvince(inp) {
@@ -124,9 +122,8 @@ function securePassword(inp) {
     if (x.length>=min_caracteres) {
         if (minuscula.test(x)) {
             if (mayuscula.test(x)) {
+                valid(inp);
                 // return true;
-                valid(email);
-                valid(password);
                 return false;
             } else {
                 invalid(inp,msg1);
