@@ -1,0 +1,26 @@
+body {
+    overflow: hidden;
+    background-color:lightgoldenrodyellow;
+}
+
+.container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    div {
+        text-align: center;
+    }
+}
+
+i {
+    font-size: 10vw;
+    margin: 1vw;
+    cursor: pointer;
+    color: darkgoldenrod;
+}
+
+.hidden {
+    display: none;
+}
