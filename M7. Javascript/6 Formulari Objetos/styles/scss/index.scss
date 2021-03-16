@@ -1,0 +1,54 @@
+body {
+    overflow-x: hidden;
+}
+
+#saveButton {
+    border-radius: 20px;
+}
+
+#addProduct {
+    margin-top: 0 !important;
+}
+
+#productList {
+    margin-top: -0.5rem !important;
+}
+
+select {
+    max-height: 100px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.notification {
+    font-size: 1.4rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.close {
+    cursor: pointer;
+}
+
+@media screen and (min-width: 992px) {
+    #addProduct {
+        max-height: 338px;
+    }
+}
+
+@media screen and (min-width: 1012px) {
+    #addProduct {
+        max-height: 304px;
+    }
+}
+
+
+select:not(:-internal-list-box) {
+    max-height: 20px !important;
+}
+
+.z_co_dropdown {
+    height: 120px !important;
+  }
