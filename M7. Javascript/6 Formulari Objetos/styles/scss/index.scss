@@ -14,10 +14,6 @@ body {
     margin-top: -0.5rem !important;
 }
 
-select {
-    max-height: 100px;
-}
-
 .hidden {
     display: none !important;
 }
@@ -45,10 +41,10 @@ select {
 }
 
 
-select:not(:-internal-list-box) {
-    max-height: 20px !important;
-}
+// select:not(:-internal-list-box) {
+//     max-height: 20px !important;
+// }
 
-.z_co_dropdown {
-    height: 120px !important;
-  }
+// .z_co_dropdown {
+//     height: 120px !important;
+//   }
