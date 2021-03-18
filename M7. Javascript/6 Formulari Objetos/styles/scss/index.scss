@@ -2,6 +2,16 @@ body {
     overflow-x: hidden;
 }
 
+#todo {
+    padding: 0px;
+    max-width: 100%;
+}
+
+hr{
+    margin-top: 0.5rem !important;
+    margin-bottom: 0.5rem !important;
+}
+
 #saveButton {
     border-radius: 20px;
 }
@@ -18,10 +28,16 @@ body {
     display: none !important;
 }
 
+#notifications {
+    min-height: 38px;
+}
+
 .notification {
-    font-size: 1.4rem;
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    h6{margin: 0px;}
+    i{font-size: 1.25rem;}
 }
 
 .close {

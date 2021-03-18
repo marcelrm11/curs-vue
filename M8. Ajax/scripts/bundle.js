@@ -15,7 +15,7 @@
   \********************/
 /***/ (() => {
 
-eval("// recorda fer el git Bash i npm run build\n\n//# sourceURL=webpack:///./src/app.js?");
+eval("// recorda fer el git Bash i npm run build\n$(document).ready(function () {\n  $(\"#joke\").click(function (e) {\n    e.preventDefault();\n    $.getJSON(\"http://api.icndb.com/jokes/random\", function (data) {\n      console.log(data);\n      $(\"#jokesList\").html(\"\\n                \".concat(data.value.joke, \"\\n                \"));\n    });\n  }); // s'ha de fer amb el metode fetch (post?)\n\n  var chistes;\n  $.getJSON(\"http://api.icndb.com/jokes\", function (data) {\n    chistes = data.value;\n    $(\"#searchbtn\").click(function (e) {\n      e.preventDefault();\n      var chiste = $(this.joke);\n      console.log(chistes);\n      $.each(chistes, function (i, item) {\n        if (item.joke.indexOf(joke) !== -1) {}\n      });\n    });\n  });\n});\n\n//# sourceURL=webpack:///./src/app.js?");
 
 /***/ })
 

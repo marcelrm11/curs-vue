@@ -9,24 +9,24 @@ class Product {
         this.id = name+price+year;
     }
     show(){
-        const container = document.getElementById("productList");
+        const container = document.getElementById("productList").appendChild(document.createElement("div"));
+        container.className = "container my-2 border px-4 py-3 d-flex justify-content-between align-items-center border rounded-lg";
+        container.id = this.id;
         container.innerHTML = `
-        <div id="${this.id}" class="container my-2 border px-4 py-3 d-flex justify-content-between align-items-center border rounded-lg">
-                <div>
-                    <h6 class="d-inline mr-2">Product Name:</h6>
-                    <p class="d-inline mr-2">${this.name}</p>
-                </div>
-                <div>
-                    <h6 class="d-inline mr-2">Product Price:</h6>
-                    <p class="d-inline mr-2">${this.price}</p>
-                </div>
-                <div>
-                    <h6 class="d-inline mr-2">Product Year:</h6>
-                    <p class="d-inline mr-2">${this.year}</p>
-                </div>
-                <div>
-                    <button class="btn btn-warning remove"><i class="far fa-trash-alt"></i></button>
-                </div>
+            <div>
+                <h6 class="d-inline mr-2">Product Name:</h6>
+                <p class="d-inline mr-2">${this.name}</p>
+            </div>
+            <div>
+                <h6 class="d-inline mr-2">Product Price:</h6>
+                <p class="d-inline mr-2">${this.price}</p>
+            </div>
+            <div>
+                <h6 class="d-inline mr-2">Product Year:</h6>
+                <p class="d-inline mr-2">${this.year}</p>
+            </div>
+            <div>
+                <button class="btn btn-warning remove"><i class="far fa-trash-alt"></i></button>
             </div>`;
     }
 
