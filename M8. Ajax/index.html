@@ -13,14 +13,16 @@
 
     <div class="container">
         <button id="joke" class="btn btn-info mt-3">New Joke</button>
-        <div id="jokesList" class="container bg-light border rounded-lg my-3 py-3">Joke sample</div>
+        <div id="jokesList" class="container bg-light border rounded-lg my-3 py-3">Random joke will go here</div>
     </div><hr>
 
     <div class="container">
         <form class="d-flex">
-        <input class="form-control mr-3" type="search" placeholder="Search for words" aria-label="Search">
-        <button id="searchbtn" class="btn btn-success w-50" type="submit">Search</button>
+        <input id="searchcontent" class="form-control mr-3" type="search" placeholder="Search for words" aria-label="Search" autocomplete="off" value="">
+        <button id="searchbtn" class="btn btn-success w-50 mr-2" type="submit">Search</button>
+        <button id="clearbtn" class="btn btn-warning w-50 ml-2">Clear</button>
         </form>
+        <div id="jokesResult" class="container bg-light border rounded-lg my-3 py-3">10 Best Joke results<br></div>
     </div>
     
 <!-- SCRIPTS -->

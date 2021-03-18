@@ -13,24 +13,38 @@ $(document).ready(function () {
         );
     });
 
-
-    // s'ha de fer amb el metode fetch (post?)
-    let chistes;
-    $.getJSON("http://api.icndb.com/jokes",
-        function (data) {
-            chistes=data.value;
-            $("#searchbtn").click(function (e) { 
-                e.preventDefault();
-                let chiste = $(this.joke);
-                console.log(chistes);
-                $.each(chistes, function (i, item) { 
-                    if (item.joke.indexOf(joke)!==-1) {
-                        
-                    }
-                });
-                
-                
-            });
+    let lista = [];
+    fetch('http://api.icndb.com/jokes').then(response => response.json()).then(function (data) {
+        let x = data.value;
+        for (let i = 0; i < x.length; i++) {
+            lista.push(x[i].joke);
         }
-    );
+    });
+    
+    $("#searchbtn").click(function (e) { 
+        e.preventDefault();
+        $("#jokesResult").html(`10 Best Joke results`);
+        let search = document.getElementById("searchcontent").value.toLowerCase();
+        let count=0;
+        for (let i = 0; i < lista.length; i++) {
+            let pos = lista[i].toLowerCase().search(search);
+            if (count==10) {
+                break;
+            }
+            else if (pos!==-1) {
+                $("#jokesResult").html($("#jokesResult").html()+`
+                <li> ${lista[i]} </li>`);
+                count++;
+            }
+        }
+        if (count==0) {
+            $("#jokesResult").html(`
+                No results <i class="far fa-sad-tear"></i> Try again with other words`);
+        }
+    });
+
+    $("#clearbtn").click(function (e) { 
+        e.preventDefault();
+        $("#jokesResult").html(`10 Best Joke results`);
+    });
 });
