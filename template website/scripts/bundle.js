@@ -15,7 +15,7 @@
   \********************/
 /***/ (() => {
 
-eval("// recorda fer el git Bash i npm run build\n\n//# sourceURL=webpack:///./src/app.js?");
+eval("// recorda fer el git Bash i npm run build\nvar app = new Vue({\n  el: '#app',\n  data: {\n    titulo: 'Adios mundo con vue'\n  }\n});\n\n//# sourceURL=webpack:///./src/app.js?");
 
 /***/ })
 
