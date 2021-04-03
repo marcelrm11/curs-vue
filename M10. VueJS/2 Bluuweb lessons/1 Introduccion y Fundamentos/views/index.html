@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="./../styles/css/index.css">
+    <link rel="stylesheet" href="./../bootstrap/css/bootstrap.css">
+    <script src="https://kit.fontawesome.com/22d5895588.js" crossorigin="anonymous"></script>
+    <script src="./../scripts/es6/vue.js"></script>
+</head>
+<body>
+
+    <div id="app" class="container">
+
+        <h1 v-bind:title="message">{{ titulo }}</h1>
+
+        <input type="text" v-model="nuevaVerdura" @keyup.enter="agregarVerdura">
+        <button class="btn btn-primary" @click="agregarVerdura">Agregar</button><br>
+
+        <ul>
+            <li class="my-2" v-for="verdura of verduras">
+                <input class="mr-2" type="number" v-model.number="verdura.cantidad">{{verdura.nombre}} 
+                <button class="btn btn-light border mx-2" @click="verdura.cantidad++"><i class="far fa-plus-square"></i></button>
+                <span v-if="verdura.cantidad < 5"> quedan pocos</span>
+            </li>
+        </ul>
+
+        <h4 v-text="sumarVerduras">TOTAL: {{sumarVerduras}}</h4><br>
+
+        <label for="texto">Introduce un fondo de Bootstrap (primary, info, success, warning, etc.)</label>
+        <input id="texto" type="text" class="form-control" v-model="fondo">
+        <div :class="['p-3','text-white',fondo]">
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. A facere amet quam molestias perferendis? Voluptas optio illo incidunt culpa iste aut labore mollitia, sit quidem unde fuga asperiores amet. Ratione.</p>
+        </div>
+
+        <div class="text-white p-3 my-2" :class="{'bg-success' : color, 'bg-danger' : !color}" >
+            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Voluptas suscipit nulla in, similique consequatur, sequi praesentium facilis, illo numquam nisi nesciunt inventore id neque temporibus aperiam ipsum assumenda iste sint.</p>
+        </div>
+        <button class="btn btn-info" @click="color=!color" >Cambiar color</button>
+
+
+    </div>
+    
+<!-- SCRIPTS -->
+    <script src="./../bootstrap/js/jquery-3.5.1.slim.min.js"></script>
+    <script src="./../bootstrap/js/popper.min.js"></script>
+    <script src="./../bootstrap/js/bootstrap.min.js"></script>
+    <script src="./../scripts/bundle.js"></script>
+</body>
+</html>
