@@ -5,7 +5,7 @@
                 <div class="modal-content">
                     <slot name="header"></slot>
                     <slot name="body" v-bind="ChangeInput(numero)"></slot>
-                    <div class="conversion">
+                    <div class="conversion text-center">
                         <p v-show="euros">El cambio de {{euros}}€ en dólares son {{euros|convert}}$.</p>
                     </div>
                     <slot name="footer"></slot>
@@ -46,4 +46,6 @@
         display: unset !important;
         position: unset !important;
     }
+    .conversion{
+        min-height: 40px;}
 </style>

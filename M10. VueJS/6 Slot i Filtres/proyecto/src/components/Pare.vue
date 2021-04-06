@@ -1,6 +1,6 @@
 <template>
     <div class="container">
-        <ModalBootstrap v-show="active">
+        <ModalBootstrap v-show="active" :numero="euros">
             <template v-slot:header>
                 <div class="modal-header">
                     <h5 class="modal-title">Euros (€) a Dólares ($)</h5>
@@ -13,7 +13,7 @@
             <template #body>
                 <div class="modal-body text-center">
                     <h3>Cambio de Moneda</h3>
-                    <input type="text" v-model="euros" :numero="euros" placeholder="Introduce un valor en Euros" class="rounded border border-secondary my-2 text-center">
+                    <input type="text" v-model="euros" placeholder="Introduce un valor en Euros" class="rounded border border-secondary my-2 text-center">
                 </div>
             </template>
 
@@ -54,6 +54,5 @@
     ::placeholder{
         font-size: smaller;
         text-align: center;}
-    .conversion{
-        min-height: 40px;}
+    .modal-body{padding-bottom: 0 !important;}
 </style>
