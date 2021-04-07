@@ -3,7 +3,7 @@
         <template #name>
             <div class="form-group">
                 <label for="name">Name</label>
-                <input type="text" class="form-control" id="name" placeholder="Enter name" required pattern="[A-Za-z]{6,13}" data-toggle="tooltip" data-placement="top" title="only numbers, 6-13 characters">
+                <input type="text" class="form-control" id="name" placeholder="Enter name" required pattern="[A-Za-z]{6,13}" v-tooltip:top="'only numbers, 6-13 characters'">
             </div>
         </template>
         <template #phone>
