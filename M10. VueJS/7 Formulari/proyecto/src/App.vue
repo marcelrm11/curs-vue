@@ -13,7 +13,7 @@
     name: 'App',
     components: {
       Formulari
-    }
+    },
   }
 </script>
 
@@ -26,5 +26,7 @@
     margin-top: 60px;
   }
 
-  #logo {text-align: center;}
+  #logo {
+    text-align: center;
+  }
 </style>

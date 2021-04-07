@@ -3,22 +3,19 @@
         <template #name>
             <div class="form-group">
                 <label for="name">Name</label>
-                <input type="text" class="form-control" id="name" placeholder="Enter name" required pattern="[A-Za-z]{6,13}">
-                <small>only numbers, 6-13 characters</small>
+                <input type="text" class="form-control" id="name" placeholder="Enter name" required pattern="[A-Za-z]{6,13}" data-toggle="tooltip" data-placement="top" title="only numbers, 6-13 characters">
             </div>
         </template>
         <template #phone>
             <div class="form-group">
                 <label for="phone">Phone number</label>
-                <input type="tel" class="form-control" id="phone" placeholder="Enter phone number" required pattern="[0-9]+">
-                <small>only numbers</small>
+                <input type="tel" class="form-control" id="phone" placeholder="Enter phone number" required pattern="[0-9]+" title="only numbers">
             </div>
         </template>
         <template #postal>
             <div class="form-group">
                 <label for="postal">Postal code</label>
-                <input type="number" class="form-control" id="postal" placeholder="Enter postal code" required pattern="[0-9]+">
-                <small>only numbers</small>
+                <input type="number" class="form-control" id="postal" placeholder="Enter postal code" required pattern="[0-9]+" title="only numbers">
             </div>
         </template>
         <template #email>
@@ -30,8 +27,7 @@
         <template #password>
             <div class="form-group">
                 <label for="password">Password</label>
-                <input type="password" class="form-control" id="password" placeholder="Password" required v-model="p1" pattern="([A-Z]+[a-z]+.){6,13}">
-                <small>at least 1 low-case, 1 upper-case and a total of 6-13 char</small>
+                <input type="password" class="form-control" id="password" placeholder="Password" required v-model="p1" pattern="([A-Z]+[a-z]+.){6,13}" title="oat least 1 low-case, 1 upper-case and a total of 6-13 characters">
             </div>
             <div class="form-group">
                 <label for="confpassword">Confirm password</label>
