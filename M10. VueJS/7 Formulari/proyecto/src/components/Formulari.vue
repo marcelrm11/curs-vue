@@ -9,13 +9,13 @@
         <template #phone>
             <div class="form-group">
                 <label for="phone">Phone number</label>
-                <input type="tel" class="form-control" id="phone" placeholder="Enter phone number" required pattern="[0-9]+" title="only numbers">
+                <input type="tel" class="form-control" id="phone" placeholder="Enter phone number" required pattern="[0-9]+" v-tooltip:top="'only numbers'">
             </div>
         </template>
         <template #postal>
             <div class="form-group">
                 <label for="postal">Postal code</label>
-                <input type="number" class="form-control" id="postal" placeholder="Enter postal code" required pattern="[0-9]+" title="only numbers">
+                <input type="number" class="form-control" id="postal" placeholder="Enter postal code" required pattern="[0-9]+" v-tooltip:top="'only numbers'">
             </div>
         </template>
         <template #email>
@@ -27,7 +27,7 @@
         <template #password>
             <div class="form-group">
                 <label for="password">Password</label>
-                <input type="password" class="form-control" id="password" placeholder="Password" required v-model="p1" pattern="([A-Z]+[a-z]+.){6,13}" title="oat least 1 low-case, 1 upper-case and a total of 6-13 characters">
+                <input type="password" class="form-control" id="password" placeholder="Password" required v-model="p1" pattern="([A-Z]+[a-z]+.){6,13}" v-tooltip:top="'at least 1 low-case, 1 upper-case and a total of 6-13 characters'">
             </div>
             <div class="form-group">
                 <label for="confpassword">Confirm password</label>
