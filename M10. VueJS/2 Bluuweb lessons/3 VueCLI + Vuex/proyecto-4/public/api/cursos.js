@@ -1,0 +1,15 @@
+const cursos = () => {
+    return [{
+            "nombre": "HTML",
+            "id": 1
+        },
+        {
+            "nombre": "CSS",
+            "id": 2
+        },
+        {
+            "nombre": "JAVASCRIPT",
+            "id": 3
+        }
+    ]
+}
