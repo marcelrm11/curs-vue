@@ -8,19 +8,40 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     pelis,
+    // resultado: [],
     filters:
     {
       search: '',
-      available: true
+      picked: 'all'
     }
   },
   getters: {
     FilteredPelis(state){
       let peliculas = state.pelis()
-      //if en funcio dels filtres i return la part del array corresponent
+      let option = state.filters.picked
+      let search = state.filters.search.toLowerCase()
+
+      if (option=="available") {
+        peliculas = peliculas.filter(peli => peli.available)
+      }
+      else if (option=="not-available") {
+        peliculas = peliculas.filter(peli => !peli.available)
+      }
+
+      if (search.length>2) {
+        peliculas = peliculas.filter(peli => 
+          peli.title.search(search)>-1)
+      }
       return peliculas
+      
+
+      // if (pelicula.available===state.filters.available){...}
+
     }
   },
   mutations: {
+/*     SetAvailable(state){
+      state.filters.available = !state.filters.available
+    } */
   }
 })

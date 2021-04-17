@@ -1,8 +1,8 @@
 <template>
-    <div id="engloba" class="container mt-4 flex-grow-1 mx-0">
+    <div id="engloba" class="container mt-4 mx-0">
         <div class="card text-white bg-success">
             <div class="card-header">
-                <h5 class="card-title m-0"><slot name="title"></slot></h5>
+                <h5 class="card-title m-0 font-weight-bold"><slot name="title"></slot></h5>
             </div>
             <div class="card-body">
                 <p class="card-text"><slot name="body"></slot></p>
