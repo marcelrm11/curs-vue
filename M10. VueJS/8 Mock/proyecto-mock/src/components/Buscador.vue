@@ -8,7 +8,7 @@
                 <form class="d-flex">
                     <input id="busqueda" class="form-control mr-2" type="search" placeholder="Search"
                         aria-label="Search" v-model="filters.search" autocomplete="off">
-                    <button class="btn btn-outline-success w-25" type="submit" @click="Search()">Search</button>
+                    <button class="btn btn-outline-success w-25" type="button" @click="Search()">Search</button>
                 </form>
                 <div class="mt-2">
                     <div class="form-check mx-2 d-inline">
@@ -35,7 +35,7 @@
                 </div>
             </div>
             <div class="container d-flex flex-wrap px-0">
-                <Pelicula v-for="peli in pelis" :key="peli.id">
+                <Pelicula v-for="peli in FilteredPelis" :key="peli.id">
                     <template #title>{{peli.title}}</template>
                     <template #body>{{peli.description}}</template>
                     <template #footer>
