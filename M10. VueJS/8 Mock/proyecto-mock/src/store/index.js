@@ -8,40 +8,49 @@ Vue.use(Vuex)
 export default new Vuex.Store({
   state: {
     pelis,
-    // resultado: [],
-    filters:
-    {
+    clicked: false,
+    filters: {
       search: '',
       picked: 'all'
     }
   },
   getters: {
-    FilteredPelis(state){
+    FilteredPelis(state) {
       let peliculas = state.pelis()
       let option = state.filters.picked
       let search = state.filters.search.toLowerCase()
 
-      if (option=="available") {
-        peliculas = peliculas.filter(peli => peli.available)
+      if (state.clicked) {
+        if (search.length>2) {
+          if (option == "available") {
+            peliculas = peliculas.filter(peli => peli.available)
+          } else if (option == "not-available") {
+            peliculas = peliculas.filter(peli => !peli.available)
+          }
+          peliculas = peliculas.filter(peli => peli.title.toLowerCase().search(search) > -1)
+        }
+        state.clicked = false
+        return peliculas
       }
-      else if (option=="not-available") {
-        peliculas = peliculas.filter(peli => !peli.available)
+      else {
+        if (option == "available") {
+          peliculas = peliculas.filter(peli => peli.available)
+        } else if (option == "not-available") {
+          peliculas = peliculas.filter(peli => !peli.available)
+        }
+        return peliculas
       }
-
-      if (search.length>2) {
-        peliculas = peliculas.filter(peli => 
-          peli.title.search(search)>-1)
-      }
-      return peliculas
-      
 
       // if (pelicula.available===state.filters.available){...}
 
     }
   },
   mutations: {
-/*     SetAvailable(state){
-      state.filters.available = !state.filters.available
-    } */
+    Search(state) {
+      state.clicked = true
+    }
+    /*     SetAvailable(state){
+          state.filters.available = !state.filters.available
+        } */
   }
 })
