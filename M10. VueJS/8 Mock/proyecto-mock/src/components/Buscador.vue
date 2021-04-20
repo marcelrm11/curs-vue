@@ -6,9 +6,9 @@
             <label for="busqueda" class="font-italic my-3">¿Qué película estás buscando?</label>
             <div id="cuadro-busqueda" class="container-fluid mt-3">
                 <form class="d-flex">
-                    <input id="busqueda" class="form-control mr-2" type="search" placeholder="Search"
-                        aria-label="Search" v-model="filters.search" autocomplete="off">
-                    <button class="btn btn-outline-success w-25" type="button" @click="Search()">Search</button>
+                    <input id="busqueda" class="form-control" type="search" placeholder="Search" aria-label="Search"
+                        v-model="filters.search" autocomplete="off">
+                    <!-- <button class="btn btn-outline-success w-25" type="button" @click="Search()">Search</button> -->
                 </form>
                 <div class="mt-2">
                     <div class="form-check mx-2 d-inline">
@@ -34,7 +34,7 @@
                     </div>
                 </div>
             </div>
-            <div class="container d-flex flex-wrap px-0">
+            <div id="lista" class="container d-flex flex-wrap px-0">
                 <Pelicula v-for="peli in FilteredPelis" :key="peli.id">
                     <template #title>{{peli.title}}</template>
                     <template #body>{{peli.description}}</template>
@@ -43,6 +43,9 @@
                         <p class="m-0 bg-danger" v-else>Not Available</p>
                     </template>
                 </Pelicula>
+                <div v-if="!FilteredPelis.length" class="alert alert-danger mx-3 mt-4 w-100" role="alert">
+                    No hay películas con esa búsqueda
+                </div>
             </div>
         </div>
     </div>
@@ -52,7 +55,7 @@
     import Pelicula from './Pelicula'
     import {
         mapGetters,
-        mapMutations,
+        // mapMutations,
         mapState
     } from 'vuex'
     // import store from './../store/index'
@@ -65,7 +68,7 @@
         computed: {
             ...mapGetters(['FilteredPelis']),
             ...mapState(['filters']),
-            ...mapMutations(['Search'])
+            // ...mapMutations(['Search'])
 
             /*  available: {
                     get(){
@@ -110,5 +113,9 @@
 
     .form-control::placeholder {
         color: #6b7e92 !important
+    }
+
+    #lista {
+        height: 100% !important
     }
 </style>
