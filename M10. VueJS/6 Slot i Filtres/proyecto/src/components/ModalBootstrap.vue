@@ -1,5 +1,5 @@
 <template>
-    <div class="container">
+    <div class="container-modal">
         <div class="modal" tabindex="-1" role="dialog">
             <div class="modal-dialog" role="document">
                 <div class="modal-content">
@@ -41,10 +41,14 @@
     }
 </script>
 
-<style scoped>
+<style>
     .modal {
         display: unset !important;
         position: unset !important;
+    }
+    .container-modal{
+        position: relative;
+        z-index: 30;
     }
     .conversion{
         min-height: 40px;}

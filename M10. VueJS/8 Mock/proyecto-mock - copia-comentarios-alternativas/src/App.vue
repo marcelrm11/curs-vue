@@ -1,16 +1,16 @@
 <template>
-  <div id="app" class="container">
-    <Pare></Pare>
+  <div id="app">
+    <Buscador></Buscador>
   </div>
 </template>
 
 <script>
-import Pare from './components/Pare'
+import Buscador from './components/Buscador'
 
 export default {
   name: 'App',
   components: {
-    Pare
+    Buscador
   }
 }
 </script>

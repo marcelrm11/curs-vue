@@ -8,6 +8,7 @@
                 <form class="d-flex">
                     <input id="busqueda" class="form-control" type="search" placeholder="Search" aria-label="Search"
                         v-model="filters.search" autocomplete="off">
+                    <!-- <button class="btn btn-outline-success w-25" type="button" @click="Search()">Search</button> -->
                 </form>
                 <div class="mt-2">
                     <div class="form-check mx-2 d-inline">
@@ -60,8 +61,10 @@
     import Alert from './Animations/Alert'
     import {
         mapGetters,
+        // mapMutations,
         mapState
     } from 'vuex'
+    // import store from './../store/index'
 
     export default {
         name: 'Buscador',
@@ -78,6 +81,16 @@
         computed: {
             ...mapGetters(['FilteredPelis']),
             ...mapState(['filters']),
+            // ...mapMutations(['Search'])
+
+            /*  available: {
+                    get(){
+                        return store.state.filters.available
+                    },
+                    set(value){
+                        store.commit('SetAvailable', value)
+                    }
+                } */
         }
     }
 </script>
