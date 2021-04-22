@@ -4,6 +4,7 @@ import 'jquery'
 import $ from 'jquery'
 import 'bootstrap'
 import 'bootstrap/dist/css/bootstrap.min.css'
+import 'animate.css'
 
 Vue.config.productionTip = false
 
