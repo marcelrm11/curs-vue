@@ -30,12 +30,3 @@ export default {
   }
 }
 </script>
-
-<style lang="scss">
-
-/*   #users-list::after {
-    content: "";
-    flex-grow: 1;
-} */
-
-</style>

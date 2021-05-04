@@ -20,14 +20,16 @@ const routes = [
     component: () => import(/* webpackChunkName: "users" */ '../views/Users.vue')
   },
   {
-    path: '/pictures/:album',
+    path: '/pictures/:albumId',
     name: 'AlbumDetail',
-    component: () => import(/* webpackChunkName: "users" */ '../views/AlbumDetail.vue')
+    component: () => import(/* webpackChunkName: "album" */ '../views/AlbumDetail.vue'),
+    props: true
   },
   {
     path: '/users/:username',
     name: 'UserDetail',
-    component: () => import(/* webpackChunkName: "users" */ '../views/UserDetail.vue')
+    component: () => import(/* webpackChunkName: "username" */ '../views/UserDetail.vue'),
+    props: true
   }
 ]
 

@@ -1,7 +1,9 @@
 <template>
     <div id="user-card" class="m-2">
         <b-card id="actual-card" :title="user.name" :sub-title="user.username" tag="article" class="mb-2">
-            <b-button variant="primary" :to="{name: 'UserDetail', params:{username: username}}" >See detail</b-button>
+            <b-button variant="primary"
+            :to="{name:'UserDetail', params:{username: user.username}}"
+            >See detail</b-button>
         </b-card>
     </div>
 </template>
@@ -39,6 +41,11 @@ export default {
 
 #actual-card {
     height: 100%;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 1px 3px, rgba(0, 0, 0, 0.24) 0px 1px 2px; //#27
+    border: none;
+    &:hover {
+        box-shadow:   rgba(0, 0, 0, 0.16) 0px 3px 6px, rgba(0, 0, 0, 0.23) 0px 3px 6px;
+    }
 }
 
 .card-body {

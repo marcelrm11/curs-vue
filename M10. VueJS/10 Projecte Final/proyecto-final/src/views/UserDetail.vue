@@ -1,11 +1,25 @@
 <template>
     <div class="p-3">
-        <h1>this is the User Detail page</h1>
+        <div class="container mt-5">
+            <UserDC :username="username" ></UserDC>
+            <b-button variant="warning" @click="back()">Go Back</b-button>
+        </div>
     </div>
 </template>
 
 <script>
-export default {
-    name: 'UserDetail'
-}
+    import UserDC from '@/components/UserDetailComponent'
+ ''
+    export default {
+        name: 'UserDetail',
+        props: ['username'],
+        components: {
+            UserDC
+        },
+        methods: {
+            back() {
+                this.$router.go(-1)
+            }
+        }
+    }
 </script>

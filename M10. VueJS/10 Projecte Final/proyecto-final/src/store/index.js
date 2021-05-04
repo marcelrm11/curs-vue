@@ -18,34 +18,41 @@ export default new Vuex.Store({
       state.users = usersAction;
     },
     createAlbums(state) {
-      // const albumId = 1;
-      const albumsCount = []
-
-      for (let k = 0; k < state.pictures.length; k++) {
-        console.log(state.pictures[k]);
-        // if (state.pictures[k].albumId != state.pictures[k-1].albumId) {
-        //   albumsCount.push(state.pictures[k].albumId)
-        // }
+      if (!state.albums.length) {
+        let totalAlbums = state.pictures[state.pictures.length-1].albumId;
+        for (let i = 1; i <= totalAlbums; i++) {
+          let albumTemp = []
+          for (let k = 0; k < state.pictures.length; k++) {
+            if (state.pictures[k].albumId == i) {
+              albumTemp.push(state.pictures[k])
+            }
+          }
+          state.albums.push(albumTemp)
+        }
       }
+    },
 
-      // for (let j = 1; j < 100; j++) {
-      //   for (let i = 0; i < state.pictures.length; i++) {
-      //     const album = []
-      //     if (state.pictures[i].albumId == albumId) {
-      //       album.push(state.pictures[i])
-      //     }
-      //   }        
-      // }
+    findUser(state,username) {
+      for (let i = 0; i < state.users.length; i++) {
+        if (username == state.users[i].username) {
+          return state.users[i]
+        }
+      }
+    },
 
-      // console.log(albumsCount);
-      // console.log(state.albums);
+    ///////////// CHECK PARA COMPROBAR FUNCIONES EN CONSOLA ///////////
+    check(state){
+      let totalAlbums = state.pictures[state.pictures.length-1].albumId
+      console.log(totalAlbums)
     }
+    ///////////////////////////////////////////////////////////////////
   },
   actions: {
     getPictures: async function ({commit}) {
       const data = await fetch('http://jsonplaceholder.typicode.com/photos');
       const picturesTemp = await data.json();
-      commit('fillPictures',picturesTemp)
+      commit('fillPictures',picturesTemp);
+      commit('createAlbums')
     },
     getUsers: async function ({commit}) {
       const data = await fetch('http://jsonplaceholder.typicode.com/users');
