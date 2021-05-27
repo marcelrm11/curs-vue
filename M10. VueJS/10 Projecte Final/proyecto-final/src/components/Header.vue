@@ -15,7 +15,7 @@
                 <b-navbar-nav class="ml-auto">
                     <b-nav-form id="search-form">
                         <b-form-input size="sm" class="mr-sm-2" placeholder="Search" id="search-input"></b-form-input>
-                        <b-button size="sm" class="my-2 my-sm-0" type="submit" id="search-btn">Search</b-button>
+                        <b-button size="sm" class="my-2 my-sm-0" type="submit" id="primary-btn">Search</b-button>
                     </b-nav-form>
                 </b-navbar-nav>
             </b-collapse>
@@ -77,14 +77,5 @@
         background-color: $primary-background;
         color: $tertiary-content;
         border-color: $tertiary-content;
-    }
-
-    #search-btn {
-        background-color: $primary-content;
-        border-color: $primary-content;
-        &:hover{
-            background-color: $secondary-content;
-            border-color: $secondary-content;
-        }
     }
 </style>

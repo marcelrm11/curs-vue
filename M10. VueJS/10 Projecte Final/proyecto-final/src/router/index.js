@@ -30,6 +30,12 @@ const routes = [
     name: 'UserDetail',
     component: () => import(/* webpackChunkName: "username" */ '../views/UserDetail.vue'),
     props: true
+  },
+  {
+    path: '/pictures/:albumId/:picId',
+    name: 'PicDetail',
+    component: () => import(/* webpackChunkName: "picdetail" */ '../views/PicDetail.vue'),
+    props: true
   }
 ]
 

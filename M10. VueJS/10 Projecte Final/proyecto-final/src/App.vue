@@ -38,4 +38,22 @@ export default {
   padding-bottom: 4.5rem; //footer height
 }
 
+#back-btn {
+  background-color: $secondary-content;
+  border-color: $secondary-content;
+  &:hover{
+      background-color: $tertiary-content;
+      border-color: $tertiary-content;
+  }
+}
+
+#primary-btn {
+    background-color: $primary-content;
+    border-color: $primary-content;
+    &:hover{
+        background-color: $secondary-content;
+        border-color: $secondary-content;
+    }
+}
+
 </style>

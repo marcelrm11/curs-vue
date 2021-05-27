@@ -1,8 +1,8 @@
 <template>
     <div class="p-3">
-        <div class="container mt-5">
+        <div class="container">
+            <b-button id="back-btn" @click="back()">Go Back</b-button>
             <AlbumDC :albumId="albumId"></AlbumDC>
-            <b-button variant="warning" @click="back()">Go Back</b-button>
         </div>
     </div>
 </template>

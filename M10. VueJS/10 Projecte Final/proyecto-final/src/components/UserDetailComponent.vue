@@ -6,7 +6,7 @@
                 <template #header>
                     <h4 id="user-dc-header" class="mb-0 p-3">{{user.name}}</h4>
                 </template>
-
+                
                 <b-list-group flush id="user-dc-body" class="p-3">
                     <b-list-group-item>
                         <span class="card-category">Username: </span> {{user.username}}</b-list-group-item>

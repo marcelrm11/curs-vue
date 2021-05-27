@@ -1,17 +1,36 @@
 <template>
     <div id="user-card" class="m-2">
-        <b-card id="actual-card" :title="user.name" :sub-title="user.username" tag="article" class="mb-2">
-            <b-button variant="primary"
+        <b-card id="actual-card" class="mb-2"
+            :title="user.name" 
+            :sub-title="user.username">
+            <b-button id="primary-btn"
             :to="{name:'UserDetail', params:{username: user.username}}"
-            >See detail</b-button>
+            @click="add(user)" >See detail</b-button>
         </b-card>
     </div>
 </template>
 
 <script>
+import { mapState } from 'vuex';
 export default {
     name: 'UserCard',
-    props: ['user']
+    props: ['user'],
+    computed: {
+        ...mapState(['usersCount'])
+    },
+    methods: {
+        add(user){
+            let activeUser = user.name
+            if (activeUser in this.usersCount) {
+            this.usersCount.activeUser++
+            }
+
+            else {
+                this.usersCount = {...this.usersCount, ...{activeUser:1}};
+                }
+            console.log(activeUser+' '+this.usersCount.activeUser)
+        }
+    },
 }
 </script>
 

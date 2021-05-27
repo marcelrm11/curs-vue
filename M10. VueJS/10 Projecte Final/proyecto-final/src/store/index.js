@@ -8,7 +8,8 @@ export default new Vuex.Store({
   state: {
     pictures: [],
     users: [],
-    albums: []
+    albums: [],
+    usersCount: []
   },
   mutations: {
     fillPictures(state,picturesAction) {
@@ -28,14 +29,6 @@ export default new Vuex.Store({
             }
           }
           state.albums.push(albumTemp)
-        }
-      }
-    },
-
-    findUser(state,username) {
-      for (let i = 0; i < state.users.length; i++) {
-        if (username == state.users[i].username) {
-          return state.users[i]
         }
       }
     },
