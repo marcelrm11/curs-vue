@@ -1,7 +1,7 @@
 <template>
     <div id="header">
         <b-navbar toggleable="md" class="p-3 d-flex" sticky id="nav-bar">
-            <b-navbar-brand id="brand" :to="{name: 'Home'}">NavBar</b-navbar-brand>
+            <b-navbar-brand id="brand" :to="{name: 'Home'}">M Я M</b-navbar-brand>
 
             <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
