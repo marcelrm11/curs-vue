@@ -1,7 +1,7 @@
 <template>
     <div class="p-3">
         <b-button id="back-btn" @click="back()">Go Back</b-button>
-        <div class="container mt-3">
+        <div class="container mt-4">
             <UserDC :username="username"></UserDC>
         </div>
     </div>
@@ -9,7 +9,7 @@
 
 <script>
     import UserDC from '@/components/UserDetailComponent'
-    ''
+    
     export default {
         name: 'UserDetail',
         props: ['username'],

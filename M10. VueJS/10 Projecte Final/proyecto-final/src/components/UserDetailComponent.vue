@@ -1,12 +1,12 @@
 <template>
     <div>
-        <div class="container d-flex justify-content-center my-2" v-for="(user,index) in users" :key="index">
+        <div class="container d-flex justify-content-center" v-for="(user,index) in users" :key="index">
             <b-card v-if="username == user.username" border-variant="primary" header-bg-variant="primary"
                 header-text-variant="white" class="w-50">
                 <template #header>
-                    <h4 id="user-dc-header" class="mb-0 p-3">{{user.name}}</h4>
+                    <h4 id="user-dc-header" class="mb-0 p-3">{{user.name | mayus}}</h4>
                 </template>
-                
+
                 <b-list-group flush id="user-dc-body" class="p-3">
                     <b-list-group-item>
                         <span class="card-category">Username: </span> {{user.username}}</b-list-group-item>
@@ -64,11 +64,18 @@
         computed: {
             ...mapState(['users'])
         },
+        filters: {
+            mayus: function (word) {
+                if (!word) return ''
+                word = word.toString()
+                return word.toUpperCase()
+            }
+        },
     }
 </script>
 
 <style lang="scss">
-@import '@/styles/_variables.scss';
+    @import '@/styles/_variables.scss';
 
     #user-dc-header {
         text-align: center;
@@ -87,12 +94,13 @@
         font-weight: bold;
     }
 
-    #company-{
-        &phrase{
+    #company- {
+        &phrase {
             font-style: italic;
             font-size: 0.9rem;
         }
-        &bs{
+
+        &bs {
             font-family: $handWritten;
         }
     }

@@ -3,7 +3,7 @@
         <h2>Album #{{albumId}}</h2>
         <div class="container d-flex flex-wrap my-2">
             <div v-for="(picture,index) in pictures" :key="index" class="my-2">
-                <b-link id="pic-container" :to="{name: 'PicDetail', params:{picId: picture.id}}">
+                <b-link id="pic-container" :to="{name: 'PicDetail', params:{picId: picture.id}}" @click="addPicture(picture.title)">
                     <b-card v-if="albumId == picture.albumId" :img-src="picture.thumbnailUrl" img-top class="m-2"
                         id="pic-card">
                         <b-card-body class="p-0">{{picture.title}}</b-card-body>
@@ -17,6 +17,7 @@
 
 <script>
     import {
+      mapMutations,
         mapState
     } from 'vuex'
     export default {
@@ -24,6 +25,9 @@
         props: ['albumId'],
         computed: {
             ...mapState(['pictures'])
+        },
+        methods: {
+        ...mapMutations(['addPicture'])
         },
     }
 </script>

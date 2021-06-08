@@ -1,36 +1,31 @@
 <template>
     <div id="user-card" class="m-2">
         <b-card id="actual-card" class="mb-2"
-            :title="user.name" 
+            :title="user.name | mayus" 
             :sub-title="user.username">
             <b-button id="primary-btn"
             :to="{name:'UserDetail', params:{username: user.username}}"
-            @click="add(user)" >See detail</b-button>
+            @click="addUser(user.name)">See detail</b-button>
         </b-card>
     </div>
 </template>
 
 <script>
-import { mapState } from 'vuex';
+import {mapMutations} from 'vuex';
+
 export default {
     name: 'UserCard',
     props: ['user'],
-    computed: {
-        ...mapState(['usersCount'])
-    },
     methods: {
-        add(user){
-            let activeUser = user.name
-            if (activeUser in this.usersCount) {
-            this.usersCount.activeUser++
-            }
-
-            else {
-                this.usersCount = {...this.usersCount, ...{activeUser:1}};
-                }
-            console.log(activeUser+' '+this.usersCount.activeUser)
-        }
+        ...mapMutations(['addUser'])
     },
+    filters: {
+    mayus: function (word) {
+      if (!word) return ''
+      word = word.toString()
+      return word.toUpperCase()
+    }
+  },
 }
 </script>
 

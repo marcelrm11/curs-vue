@@ -11,7 +11,7 @@
 
 <script>
 import UserCard from '@/components/UserCard'
-import {mapActions, mapMutations, mapState} from 'vuex'
+import {mapState} from 'vuex'
 
 export default {
   name: 'Users',
@@ -20,13 +20,6 @@ export default {
   },
   computed: {
     ...mapState(['users'])
-  },
-  methods: {
-    ...mapActions(['getUsers']),
-    ...mapMutations(['fillUsers'])
-  },
-  mounted() {
-    this.getUsers();
   }
 }
 </script>

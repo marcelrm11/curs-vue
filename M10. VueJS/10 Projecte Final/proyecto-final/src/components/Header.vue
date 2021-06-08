@@ -14,18 +14,42 @@
 
                 <b-navbar-nav class="ml-auto">
                     <b-nav-form id="search-form">
-                        <b-form-input size="sm" class="mr-sm-2" placeholder="Search" id="search-input"></b-form-input>
-                        <b-button size="sm" class="my-2 my-sm-0" type="submit" id="primary-btn">Search</b-button>
+                        <b-form-input size="sm" class="mr-sm-2" placeholder="Type a user name" id="search-input"
+                            type="search" v-model="search" autocomplete="off"></b-form-input>
                     </b-nav-form>
+                    <b-list-group id="search-results" v-show="search.length >0">
+                        <b-list-group-item button id="name-result" v-for="(user,index) in FilteredUsers" :key="index">
+                            <b-link :to="{name: 'UserDetail', params:{username: user.username}}" @click="addUser(user.name)">
+                            {{user.name}}</b-link>
+                        </b-list-group-item>
+                    </b-list-group>
+                    <!-- <p>{{search}}</p> -->
                 </b-navbar-nav>
+
             </b-collapse>
         </b-navbar>
     </div>
 </template>
 
 <script>
+    import { mapGetters, mapMutations } from 'vuex'
+    import store from '@/store/index.js'
     export default {
-        name: 'Header'
+        name: 'Header',
+        computed: {
+            ...mapGetters(['FilteredUsers']),
+            search: {
+                    get(){
+                        return store.state.search
+                    },
+                    set(value){
+                        store.commit('SetSearch', value)
+                    }
+                } 
+        },
+        methods: {
+            ...mapMutations(['addUser'])
+        },
     }
 </script>
 
@@ -34,9 +58,11 @@
 
     #header {
         font-weight: bold;
+
         a.nav-link {
             color: $primary-content;
-            &:hover{
+
+            &:hover {
                 color: $key-color;
             }
         }
@@ -68,6 +94,7 @@
     #search-form {
         display: flex;
         flex-direction: row;
+
         input {
             margin-right: 0.5rem;
         }
@@ -77,5 +104,20 @@
         background-color: $primary-background;
         color: $tertiary-content;
         border-color: $tertiary-content;
+    }
+
+    #search-results {
+        position: absolute;
+        top: 50px;
+        right: 25px;
+    }
+
+    #name-result {
+        text-align: left;
+        a{
+            text-decoration: none;
+            color: $primary-content
+        }
+        
     }
 </style>

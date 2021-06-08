@@ -22,9 +22,6 @@
     },
     computed: {
       ...mapState(['pictures', 'albums'])
-    },
-    created() {
-      this.getPictures();
     }
   }
 </script>
