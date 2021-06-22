@@ -60,7 +60,7 @@
                 company: false
             }
         },
-        props: ['username'],
+        props: {username:String},
         computed: {
             ...mapState(['users'])
         },
